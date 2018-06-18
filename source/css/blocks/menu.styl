@@ -28,6 +28,17 @@
 				flex-direction: column
 			}
 		}
+
+		.menu__link,
+		.menu__connect-link {
+			font-size: 18px
+		}
+
+		.menu__link_active {
+			@media $phone {
+				color: $extraColor
+			}
+		}
 	}
 
 	&__item {
@@ -87,6 +98,10 @@
 			&:after {
 				faster()
 				transform: scale(1)
+
+				@media $phone {
+					display: none
+				}
 			}
 		}
 
@@ -139,6 +154,4 @@
 			color: rgba($accentColor, .8)
 		}
 	}
-
-
 }
