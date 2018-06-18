@@ -17,7 +17,7 @@
                             <a href="#" class="form__headline-link link">Lost Username?</a>
                         </div>
                         <div class="form__field-wrapper">
-                            <input type="text" id="username" class="form__field" name="username" >
+                            <input type="text" id="username" class="form__field" name="username" required>
                         </div>
                     </div>
                     <div class="form__item form__item_indent-big">
@@ -26,7 +26,7 @@
                             <a href="#" class="form__headline-link link">Lost Password?</a>
                         </div>
                         <div class="form__field-wrapper">
-                            <input type="text" id="password" class="form__field" name="Password" >
+                            <input type="text" id="password" class="form__field" name="Password" required>
                         </div>
                     </div>
                     <button class="form__submit button" type="submit" data-data="" data-type="request"  data-id="1">Заказать звонок</button>
