@@ -1,0 +1,148 @@
+.modal {
+	text-align: center
+	pointer-events none
+	transition opacity $duration, visibility $duration
+	top: -150vh
+	right: -150vw
+	width: 100%
+	height: 100%
+	position: fixed
+	overflow: hidden
+	z-index: 10001
+	font-size: 0
+	white-space: nowrap
+	-webkit-overflow-scrolling: touch
+
+	&:before {
+		content: '';
+		display: inline-block;
+		vertical-align: middle;
+		height: 100%;
+		width: 0;
+	}
+
+	&_login {
+		top: 0
+		right: 0
+		left: auto
+
+		.modal__content {
+			transform translateX(100%)
+			opacity: 0
+			right: 0
+			max-width: 480px
+			position: absolute
+			height: 100%
+			transition: transform $duration $easeOutCubic, opacity $duration $easeOutCubic
+		}
+	}
+
+	&_opened {
+		top: 0
+		left: 0
+		overflow-y: auto
+		pointer-events auto
+
+		.modal__overlay {
+			opacity: 1
+			visibility: visible
+		}
+	}
+
+	&_login&_opened {
+		.modal__content {
+			transform translateX(0)
+			opacity: 1
+		}
+	}
+
+	&__overlay {
+		position: fixed;
+		opacity: 0
+		visibility: hidden
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		background-color rgba($brandColor, .7)
+		transition: opacity $duration, visibility $duration
+	}
+
+	&__open {
+		cursor pointer
+	}
+
+	&__heading {
+		padding: 24px 104px 24px 40px
+		box-shadow: inset 0 -1px 0 0 $neutralLightColor
+		background: $bgColor
+		position: relative
+		font-size: 32px
+		line-height: 1
+		font-weight: 700
+
+		@media $phone {
+			font-size: 28px
+			padding: 24px 60px 24px 20px
+		}
+	}
+
+	&__close {
+		position absolute
+		display block
+		z-index 1002
+		size 40px
+		padding: 8px
+		margin: -8px
+		right 40px
+		top 28px
+		cursor pointer
+		color $neutralDarkColor
+		transition color .35
+
+		@media $phone {
+			right: 16px
+		}
+
+
+		&__icon {
+			display: block
+			size: 24px
+			font-size: 24px
+			icon-close()
+
+			&:before {
+				line-height: 1
+			}
+		}
+
+		&:hover {
+			color: rgba($neutralDarkColor, .7)
+		}
+	}
+
+
+	&__content {
+		text-align: left
+		font-size: 14px
+		position: relative
+		display: inline-block
+		vertical-align: middle
+		white-space: normal
+		z-index 1000
+		box-sizing: border-box
+		width: 100%
+		max-width: 552px
+		background-color $bgColor
+	}
+
+	&__inner {
+		background: $bgColor
+		padding: 40px
+
+		@media $phone {
+			padding: 20px
+			padding-bottom: 40px
+		}
+	}
+}

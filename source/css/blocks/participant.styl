@@ -1,0 +1,156 @@
+.participant {
+
+	@media $phone {
+		margin-left: -20px
+		margin-right: -20px
+	}
+
+	&__item {
+		border-top: 1px solid rgba($neutralDarkColor,  .4)
+		border-bottom: 1px solid rgba($neutralDarkColor,  .4)
+	}
+
+	&__item + &__item {
+		border-top: none
+	}
+	   
+	&__item-head {
+		display: flex
+		justify-content: space-between
+		align-items: center
+		position: relative
+		cursor: pointer
+		padding: 24px 0
+		padding-right: 40px
+		transition: background $duration
+
+		@media $phone {
+			flex-direction: column
+			justify-content: flex-start
+			padding-left: 20px
+			padding-right: 20px
+		}
+	}
+
+	&__item-name {
+		width: (730/1200) * 100 + '%'
+		font-size: 36px
+		line-height: (40/36)
+		color: $brandColor
+		font-weight: 700
+		text-transform: uppercase
+
+		@media $tablet {
+			font-size: 28px
+		}
+
+		@media $phone {
+			width: 100%
+			margin-bottom: 8px
+		}
+	}
+	   
+	&__item-info {
+		display: flex
+		flex-direction: column
+		width: (264/1200) * 100 + '%'
+
+		@media $phone {
+			width: 100%
+			flex-direction: row
+			align-items: center
+		}
+	}
+
+	&__caption {
+		display: inline-block
+		vertical-align: top
+		color: $neutralDarkColor
+		font-size: 16px
+		line-height: 1
+	}
+
+	&__item-quantity {
+		display: inline-block
+		vertical-align: top
+		font-size: 24px
+		line-height: 1
+		font-weight: 700
+
+
+		@media $phone {
+			order -1
+			margin-right: 8px
+			font-size: 16px
+			font-weight: 300
+			color: $neutralDarkColor
+		}
+	}
+
+	&__item-toggle {
+		position: absolute
+		right: -8px
+		top: 50%
+		margin-top: -20px
+
+		@media $phone {
+			right: 12px
+		}
+	}
+
+	&__toggle-icon {
+		position: relative
+		cursor: pointer
+		width: 40px
+		height: 40px
+		padding: 8px
+
+		&:before,
+		&:after{
+			content: ''
+			position: absolute;
+			background-color: $neutralDarkColor
+			transition: transform .30s, opacity .30s
+		}
+
+		&:before{
+			top: 8px
+			bottom: 8px
+			left: 50%
+			width: 2px
+			margin-left: -1px
+		}
+
+		&:after{
+			top: 50%
+			left: 8px
+			right: 8px
+			height: 2px
+			margin-top: -1px
+		}
+
+		^[0]__item-head & {
+			faster()
+			color: rgba($neutralDarkColor, .8)
+		}
+
+		^[0]__item-head_active & {
+			&:before{
+				transform: rotate(90deg)
+			}
+
+			&:after{
+				transform: rotate(180deg)
+			}
+		}
+	}
+
+	&__item-body {
+		display: none
+
+		@media $phone {
+			padding-left: 20px
+			padding-right: 20px
+		}
+	}
+}

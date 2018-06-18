@@ -1,0 +1,57 @@
+.section {
+	padding-bottom: 80px
+
+	@media $tablet {
+		padding-bottom: 64px
+	}
+
+	&__container {
+		container()
+	}
+
+	&__headline {
+		margin-bottom: 64px
+
+		@media $tablet {
+			margin-bottom: 56px
+		}
+
+		&:last-child {
+			margin-bottom: 0
+		}
+	}
+
+	&__content-block {
+		display: flex
+		justify-content: space-between
+		margin-bottom: 88px
+
+		@media $tablet {
+			margin-bottom: 64px
+		}
+
+		@media $phone {
+			flex-direction: column
+			margin-bottom: 56px
+		}
+
+		&:last-child {
+			margin-bottom: 0
+		}
+	}
+
+	&__column {
+		&_6 {
+			width: calc(50% - 20px)
+
+			@media $phone {
+				width: 100%
+				margin-bottom: 32px
+
+				&:last-child {
+					margin-bottom: 0
+				}
+			}
+		}
+ 	}
+}

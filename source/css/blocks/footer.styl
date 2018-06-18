@@ -1,0 +1,44 @@
+.footer {
+	background: $neutralColor
+
+	&__container {
+		container()
+	}
+
+	&__top {
+		padding-top: 40px
+		padding-bottom: 40px
+		display: flex
+		align-items: center
+		justify-content: space-between
+		border-bottom: 1px solid rgba($neutralDarkColor, .4)
+
+		@media $tablet {
+			padding-top: 24px
+			padding-bottom: 16px
+		}
+
+		@media $phone {
+			flex-wrap: wrap
+		}
+	}
+
+	&__bottom {
+		padding-top: 40px
+		padding-bottom: 48px
+		display: flex
+		align-items: center
+		justify-content: space-between
+
+		@media $tablet {
+			padding-top: 24px
+			padding-bottom: 32px
+		}
+	}
+
+	&__copyright {
+		color: $neutralDarkColor
+		font-size: 18px
+		line-height: (16/18)
+	}
+}

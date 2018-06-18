@@ -1,0 +1,20 @@
+.button {
+	display inline-block
+	box-sizing border-box
+	background $extraColor
+	color: $textLightColor
+	border: none
+	border-radius: 2px
+	font-weight 700
+	padding: 16px
+	font-size 16px
+	line-height: (24/16)
+	text-align center
+	cursor pointer
+	transition background $duration
+
+	&:hover {
+		faster()
+		background darken($extraColor, 20%)
+	}
+}

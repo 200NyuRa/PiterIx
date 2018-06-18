@@ -1,0 +1,219 @@
+.table {
+	display: flex
+	flex-direction column
+	border-collapse: collapse
+	width: 100%
+
+	&_participant {
+		^[0]__th,
+		^[0]__td {
+			flex-shrink: 0
+
+			&:nth-child(1) {
+				width: (285/1200) * 100 + '%'
+				padding-right: 16px
+
+				@media $tablet {
+					width: 24%
+					padding-right: 8px
+				}
+
+				@media $phone {
+					width: 100%
+					padding-left: 0
+					padding-right: 0
+				}
+			}
+
+			&:nth-child(2) {
+				width: (160/1200) * 100 + '%'
+				padding-left: 16px
+				padding-right: 16px
+
+				@media $tablet {
+					width: 16%
+					padding-left: 8px
+					padding-right: 8px
+				}
+
+				@media $phone {
+					width: 100%
+					padding-left: 0
+					padding-right: 0
+				}
+			}
+
+			&:nth-child(3) {
+				width: (208/1200) * 100 + '%'
+				padding-left: 16px
+				padding-right: 16px
+
+				@media $tablet {
+					width: 20%
+					padding-left: 8px
+					padding-right: 8px
+				}
+
+				@media $phone {
+					width: 100%
+					padding-left: 0
+					padding-right: 0
+				}
+			}
+			&:nth-child(4) {
+				width: (208/1200) * 100 + '%'
+				padding-left: 16px
+
+				@media $tablet {
+					width: 20%
+					padding-left: 8px
+				}
+				@media $phone {
+					width: 100%
+					padding-left: 0
+					padding-right: 0
+				}
+			}
+
+			&:nth-child(5) {
+				margin-left: auto
+				width: (264/1200) * 100 + '%'
+				padding-left: 32px
+
+				@media $tablet {
+					width: 20%
+					padding-left: 16px
+				}
+				@media $phone {
+					width: 100%
+					padding-left: 0
+					padding-right: 0
+				}
+			}
+		}
+	}
+
+	&__head {
+		display: flex
+		background: $neutralColor
+		border-bottom: 1px solid rgba($neutralDarkColor, .4)
+
+		@media $phone {
+			display: none
+		}
+	}
+
+	&__row {
+		display: flex
+		border-bottom: 1px solid rgba($neutralDarkColor, .4)
+
+		&_no-border {
+			border-bottom: none
+		}
+
+		@media $phone {
+			flex-direction: column
+		}
+	}
+
+	&__row + &__row {
+		margin-top: -1px
+	}
+
+	&__th {
+		display: flex
+		align-items: center
+		color: $neutralDarkColor
+		font-size: 18px
+		line-height: (16/18)
+		padding: 8px 0
+
+		@media $tablet {
+			font-size: 14px
+		}
+
+		&_center {
+			justify-content: center
+		}
+	}
+
+
+	&__td {
+		display: flex
+		font-size: 21px
+		line-height: (24/21)
+		padding: 16px 0
+		color: $brandColor
+
+		@media $tablet {
+			font-size: 18px
+		}
+
+		@media $phone {
+			width: 100%
+			text-align: center
+			align-items: center
+			padding: 8px 0
+			padding-left: 16px
+		}
+
+		&_caption {
+			font-size: 18px
+			line-height: (18/16)
+			color: $neutralDarkColor
+
+			@media $tablet {
+				font-size: 14px
+			}
+		}
+
+		&_bold {
+			font-weight: bold
+		}
+
+		&_existence {
+			font-weight: 700
+			justify-content: center
+			font-size: 21px
+			line-height: (24/21)
+
+			@media $tablet {
+				font-size: 18px
+			}
+
+			@media $phone {
+				font-weight: 300
+				color: $neutralDarkColor
+				justify-content: left
+			}
+		}
+
+		&_uppercase {
+			text-transform: uppercase
+		}
+
+		&_head-mobile {
+			@media $phone {
+				width: 100%
+				font-size: 14px
+				color: $neutralDarkColor
+				line-height: (16/18)
+				padding: 8px 0
+				background: $neutralColor
+				border-bottom: 1px solid rgba($neutralDarkColor, .4)
+			}
+		}
+	}
+
+	&__th-mobile {
+		@media $phone {
+			display: block
+			width: 120px
+			text-align: left
+			text-transform: uppercase
+			font-size: 12px
+			font-weight: 300
+			color: $textColor
+		}
+	}
+}

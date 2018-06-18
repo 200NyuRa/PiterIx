@@ -1,0 +1,80 @@
+// placeholder color
+placeholder($color) {
+	&::placeholder {
+		color $color
+		opacity 1
+	}
+}
+
+// font smoothing
+smooth-font() {
+	-webkit-font-smoothing antialiased
+}
+
+// faster transition
+faster() {
+	transition-duration ($duration/2)
+}
+
+// clearfix
+clearfix() {
+	&:after {
+		display block
+		content ''
+		height 0
+		overflow hidden
+		clear both
+	}
+}
+
+// fullsize
+fullsize() {
+	position absolute
+	left 0
+	top 0
+	width 100%
+	height 100%
+}
+
+// font-face
+webfont($family, $file, $weight = normal, $style = normal) {
+	@font-face {
+		font-family $family
+		src  url('../fonts/'+$file+'.woff') format('woff'),
+			 url('../fonts/'+$file+'.ttf') format('truetype')
+		font-weight $weight
+		font-style $style
+	}
+}
+
+// cursor grab
+cursor-grab() {
+	cursor move
+	cursor grab
+}
+
+// cursor grabbing
+cursor-grabbing() {
+	cursor move
+	cursor grabbing
+}
+
+container() {
+	width 1200px
+	margin 0 auto
+
+	@media $notebook {
+		width 1200px
+	}
+
+	@media $desktop { // 1279px
+		width 980px
+	}
+	@media $tablet { // 1023px
+		width 708px
+	}
+	@media $phone { // 767px
+		width calc(100% - 40px)
+	}
+}
+

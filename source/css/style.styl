@@ -1,0 +1,64 @@
+/*** --- Reset CSS --- ***/
+@import 'reset.styl'
+
+
+/*** --- Mixins and variables --- ***/
+@import 'common/helpers.styl'
+@import 'common/variables.styl'
+@import 'common/easings.styl'
+@import 'common/mixins.styl'
+
+/*** --- Fonts --- ***/
+ webfont('FuturaNew', 'FuturaNew-Light', 300	)
+ webfont('FuturaNew', 'FuturaNew-Bold', 700)
+@import '../../public/iconfont/iconfont.styl'
+
+*, *:before, *:after {
+	box-sizing border-box
+}
+/*** --- Document --- ***/
+html,
+body {
+	height 100%
+	background $bgColor
+	color $textColor
+	font $fontSize/$lineHeight $fontFamily
+	font-weight: 300
+	-webkit-text-size-adjust 100%
+	-moz-osx-font-smoothing grayscale
+	smooth-font()
+
+	@media $tablet {
+		font-size: $fontSizeSmall
+	}
+}
+
+body.scroll-locked {
+	position fixed
+	left 0
+	width 100%
+	height 100%
+	overflow hidden
+}
+
+
+/*** --- Links --- ***/
+a {
+	text-decoration none
+}
+
+/*** --- Blocks --- ***/
+@import 'blocks/page';
+@import 'blocks/link';
+@import 'blocks/button';
+@import 'blocks/headline';
+@import 'blocks/social';
+@import 'blocks/header';
+@import 'blocks/footer';
+@import 'blocks/menu';
+@import 'blocks/section';
+@import 'blocks/table';
+@import 'blocks/participant';
+@import 'blocks/form';
+@import 'blocks/modal';
+@import 'blocks/hamburger';
