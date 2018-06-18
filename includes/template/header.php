@@ -40,7 +40,7 @@
                                     <a href="#" class="menu__link">О сети</a>
                                 </li>
                                 <li class="menu__item">
-                                    <a href="#" class="menu__link">Участники</a>
+                                    <a href="#" class="menu__link menu__link_active">Участники</a>
                                 </li>
                                 <li class="menu__item">
                                     <a href="#" class="menu__link">Техника</a></li>

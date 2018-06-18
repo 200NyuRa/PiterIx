@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html lang="ru">
-<? include('../includes/template/head.php'); ?>
+<? include('./includes/template/head.php'); ?>
 <body>
 
 	<!_ Page _>
 	<div class="page" id="root">
         <!_ Header _>
-        <?php include('../includes/template/header.php'); ?>
+        <?php include('./includes/template/header.php'); ?>
         <!_ /Header _>
 
 		<main class="main">
@@ -395,21 +395,21 @@
         </main>
 
         <!_ Footer _>
-        <?php include('../includes/template/footer.php'); ?>
+        <?php include('./includes/template/footer.php'); ?>
         <!_ Footer _>
 
         <!_ Modal Login _>
-        <?php include('../includes/blocks/modal-login.php'); ?>
+        <?php include('./includes/blocks/modal-login.php'); ?>
         <!_ /Modal Login _>
 
         <!_ Modal Monnect _>
-        <?php include('../includes/blocks/modal-connect.php'); ?>
+        <?php include('./includes/blocks/modal-connect.php'); ?>
         <!_ Modal /Monnect _>
 	</div>
 	<!_/Page _>
 
 	<!_ JS _>
-	<? include('../includes/template/scripts.php'); ?>
+	<? include('./includes/template/scripts.php'); ?>
 	<!_/JS _>
 
 </body>
