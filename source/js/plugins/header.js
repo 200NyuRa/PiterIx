@@ -9,8 +9,10 @@ export default function() {
         myScrollModule = new ScrollModule();
     let timeout;
 
+
     if(app.device.isPhone) {
-        $menuBtnOpen.on('click', () => {
+
+        const menuMobileOpen = () => {
             $header.addClass('header_open-menu');
             myScrollModule.lockScroll();
             $menuBtnOpen.fadeOut(150);
@@ -18,9 +20,9 @@ export default function() {
                 opacity: 1,
                 visibility: 'visible'
             })
-        });
+        };
 
-        $menuBtnClose.on('click', () => {
+        const menuMobileClose = () => {
             $header.removeClass('header_open-menu');
             myScrollModule.unlockScroll();
             $menuBtnOpen.fadeIn(150);
@@ -29,11 +31,20 @@ export default function() {
             timeout = setTimeout(() => {
                 $menuMobile.removeAttr('style');
             }, 350)
+        };
+
+        $menuBtnOpen.on('click', () => {
+            menuMobileOpen();
+        });
+
+        $menuBtnClose.on('click', () => {
+            menuMobileClose();
         });
 
         $menuMobile.click(function(e) {
-            !$(e.target).closest('.modal__content').length && closeModal();
+            !$(e.target).closest('.header__mobile-menu-inner').length && menuMobileClose();
         });
+
     } else {
         $header.removeClass('header_open-menu');
         $menuBtnOpen.removeAttr('style');

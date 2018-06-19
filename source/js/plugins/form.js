@@ -1,6 +1,7 @@
 export default function(options) {
     const $form = $(this);
     const $fields = $form.find('.form__field');
+    const $choicePannel = $form.find('.form__choice-panel');
 
     $fields.on('keyup input change', function () {
         if ($(this).val() !== '' && !$(this).closest('.form__field').hasClass('form__field_full')) {
@@ -22,10 +23,24 @@ export default function(options) {
     $form.validate(settings);
 
     const check = function(e){
-        console.log(1);
         $form.validate().element($(e.target));
     };
 
     const changeEvents = 'change keyup keypress';
+
     $fields.on(changeEvents, check);
-}
+
+    //clearForm
+    $form.on('clearForm', () => {
+
+        if($fields.length) {
+            $.each($fields, (i, field) => {
+                if($(field).val() !== '') $(field).val('');
+            });
+        }
+
+        if($choicePannel.length) {
+            $choicePannel.find('[type="radio"]').first().prop('checked',true);
+        }
+    });
+};

@@ -27,8 +27,7 @@
 		@media $phone {
 			flex-direction: column
 			justify-content: flex-start
-			padding-left: 20px
-			padding-right: 20px
+			padding: 16px 54px 19px 20px
 		}
 	}
 
@@ -45,8 +44,9 @@
 		}
 
 		@media $phone {
+			font-size: 24px
 			width: 100%
-			margin-bottom: 8px
+			margin-bottom: 4px
 		}
 	}
 	   
@@ -68,18 +68,22 @@
 		color: $neutralDarkColor
 		font-size: 16px
 		line-height: 1
+
+		@media $phone {
+			font-size: 14px
+		}
 	}
 
 	&__item-quantity {
 		display: inline-block
 		vertical-align: top
+		font-weight: 700
 		font-size: 24px
 		line-height: 1
-		font-weight: 700
 
 
 		@media $phone {
-			order -1
+			order: -1
 			margin-right: 8px
 			font-size: 16px
 			font-weight: 300
@@ -110,7 +114,7 @@
 			content: ''
 			position: absolute;
 			background-color: $neutralDarkColor
-			transition: transform .30s, opacity .30s
+			transition: transform .4s, background-color $duration
 		}
 
 		&:before{
@@ -121,7 +125,7 @@
 			margin-left: -1px
 		}
 
-		&:after{
+		&:after {
 			top: 50%
 			left: 8px
 			right: 8px
@@ -129,9 +133,12 @@
 			margin-top: -1px
 		}
 
-		^[0]__item-head & {
-			faster()
-			color: rgba($neutralDarkColor, .8)
+		&:hover {
+			&:before,
+			&:after {
+				faster()
+				background-color: darken($neutralDarkColor, 17%)
+			}
 		}
 
 		^[0]__item-head_active & {

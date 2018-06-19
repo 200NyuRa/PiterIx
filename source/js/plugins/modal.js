@@ -6,10 +6,18 @@ export default function() {
     const modalType = $block.data('type');
     const $close = $block.find('.modal__close');
     const $content = $block.find('.modal__content');
+    const $form = $block.find('.form');
+    const $menuBtnClose = app.dom.$body.find('.header__close-mobile');
+    const $header = app.dom.$body.find('.header');
     const myScrollModule = new ScrollModule();
+
     let timeout;
 
     const openModal = () => {
+        if($header.is('.header_open-menu')) {
+            $menuBtnClose.trigger('click');
+        }
+
         $block.addClass('modal_opened');
         myScrollModule.lockScroll();
         $block.css({
@@ -26,8 +34,9 @@ export default function() {
 
         timeout = setTimeout(()=> {
             $block.removeAttr('style');
-        }, 350 )
-        // $(app.dom.body).triggerHandler('clearPopapForm');
+        }, 350 );
+
+        if($form.length) $form.trigger('clearForm');
     };
 
     $('body').on('click', '[data-open-modal="true"]', function(e, data){
@@ -37,6 +46,7 @@ export default function() {
         if (type !== modalType) return false;
 
         $allModals.not($block).removeClass('modal_opened');
+
         openModal();
     });
 
