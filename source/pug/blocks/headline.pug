@@ -1,0 +1,19 @@
+mixin headline(data)
+    -data = data || {};
+
+    mixin headlineIinner(data)
+        -data = data || {};
+
+        .headline__decor
+        .headline__inner
+            #{data.titleTag ? data.titleTag : 'h2'}.headline__title(class = data.titleMod)&attributes(attributes)= data.title
+
+
+    .headline&attributes(attributes)
+        if(data.container)
+            .headline__container
+                +headlineIinner(data)
+                    block
+        else
+            +headlineIinner(data)
+                block

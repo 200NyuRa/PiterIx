@@ -1,0 +1,17 @@
+
+mixin stat(data)
+    - data = data || {};
+    - statItems = data.statItems || [];
+
+    .stat
+        each statItem in statItems
+            .stat__item(class=data.mod ? `stat__item_${data.mod}` : '')
+
+                if statItem.title
+                    .stat__title!= statItem.title
+
+                if statItem.value
+                    .stat__value= statItem.value
+
+                        if statItem.measure
+                            span.stat__measure= statItem.measure

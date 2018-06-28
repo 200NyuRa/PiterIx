@@ -60,16 +60,21 @@ cursor-grabbing() {
 }
 
 container() {
-	width 1200px
+	width 1208px
 	margin 0 auto
 
-	@media $notebook {
-		width 1200px
+	@media $notebook {// 1439px
+		width 1208px
 	}
 
 	@media $desktop { // 1279px
+		width 1100px
+	}
+
+	@media $smallDesktop { // 1199px
 		width 980px
 	}
+
 	@media $tablet { // 1023px
 		width 708px
 	}

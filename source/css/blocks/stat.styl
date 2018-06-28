@@ -1,0 +1,111 @@
+.stat {
+	display: flex
+	flex-wrap: wrap
+	justify-content: flex-start
+	padding: 1px
+
+	&__item {
+		width: 198px
+		height: 170px
+		display: flex
+		margin-left: -1px
+		margin-top: -1px
+		flex-direction: column
+		justify-content: space-between
+		padding: 16px
+		padding-left: 8px
+		border: 1px solid $neutralLightColor
+
+		@media $smallDesktop {
+			padding: 8px
+			padding-top: 16px
+			padding-right: 16px
+			height: 160px
+		}
+
+		&_4 {
+			width: 25%
+			@media $tablet {
+				width: 33.3333%
+			}
+
+			@media $phone {
+				width: 50%
+			}
+
+			@media $phoneSmall {
+				width: 100%
+			}
+		}
+	}
+
+
+	&__title {
+		position: relative
+		font-size: 18px
+		line-height: (16/18)
+		padding-left: 28px
+		margin-left: -8px
+		color: $textColor
+
+		@media $smallDesktop {
+			padding-left: 16px
+			font-size: 16px
+		}
+
+		@media $phone {
+			font-size: 18px
+		}
+
+
+		&:before {
+			content: ''
+			position: absolute
+			display: block
+			left: 0
+			top: 0
+			height: 100%
+			width: 4px
+			background: $extraColor
+		}
+	}
+
+	&__value {
+		text-align: right
+		white-space: nowrap
+		font-size: 36px
+		line-height: 32px
+		color: $brandColor
+		font-weight: 700
+		letter-spacing: -1.5px
+
+		@media $desktop {
+			font-size: 32px
+		}
+
+		@media $smallDesktop {
+			font-size: 28px
+		}
+
+
+		@media $phone {
+			font-size: 36px
+		}
+	}
+
+	&__measure {
+		font-size: 18px
+		line-height: 32px
+		letter-spacing: -1.5px
+		font-weight: 300
+		margin-left: .3em
+
+		@media $smallDesktop {
+			font-size: 16px
+		}
+
+		@media $phone {
+			font-size: 18px
+		}
+	}
+}

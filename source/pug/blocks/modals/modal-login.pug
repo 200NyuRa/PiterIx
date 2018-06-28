@@ -1,0 +1,23 @@
+mixin modal-login(data)
+    - data = data || {};
+
+    include ./modal
+
+    +modal({
+        mod: 'login',
+        heading: 'Авторизация'
+    })
+        form.form(action='data/submit.php', novalidate='novalidate')
+            .form__item
+                .form__label-headline
+                    label.form__label(for='username') Username
+                    a.form__headline-link.link(href='#') Lost Username?
+                .form__field-wrapper
+                    input#username.form__field(type='text', name='username', required='')
+            .form__item.form__item_indent-big
+                .form__label-headline
+                    label.form__label(for='password') Password
+                    a.form__headline-link.link(href='#') Lost Password?
+                .form__field-wrapper
+                    input#password.form__field(type='text', name='Password', required='')
+            button.form__submit.button(type='submit', data-data='', data-type='request', data-id='1') Заказать звонок

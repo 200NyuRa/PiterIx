@@ -1,0 +1,55 @@
+include ./stat
+include ./box-link
+
+mixin advantages(data)
+    -data = data || {};
+
+    section.advantages&attributes(attributes)
+        .advantages__container
+            .advantages__row
+                .advantages__content
+                    +stat({
+                        mod: '4',
+                        statItems: [
+                            {
+                                title: 'Общая<br/> пропускная<br/> собность',
+                                value: '100 500',
+                                measure: 'GBit/s'
+                            },
+                            {
+                                title: 'Количество<br>ASN',
+                                value: '354'
+                            },
+                            {
+                                title: 'IPv4<br/>префиксов',
+                                value: '78 423'
+                            },
+                            {
+                                title: 'IPv4<br/>префиксов',
+                                value: '14 505'
+                            },
+                            {
+                                title: 'Количество<br/>портов собность',
+                                value: '2 023'
+                            },
+                            {
+                                title: 'Пиковая<br/>загрузка',
+                                value: '2.527',
+                                measure: 'TBit/s'
+                            },
+                            {
+                                title: 'Точек<br/>присутствия',
+                                value: '10'
+                            },
+                            {
+                                title: 'Кое-что<br/>ещё',
+                                value: '10'
+                            }
+                        ]
+                    })
+
+                .advantages__aside
+                    +box-link({
+                        icon: 'loupe',
+                        title: 'Looking<br/>glass'
+                    })

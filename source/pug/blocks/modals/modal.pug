@@ -1,0 +1,12 @@
+mixin modal(data)
+    - data = data || {};
+
+    .modal(class=data.mod ? `modal_${data.mod}`: '')(data-type=data.mod)&attributes(attributes)
+        .modal__overlay
+        .modal__content
+            i.modal__close
+                i.modal__close__icon
+            .modal__heading
+                h2= data.heading
+            .modal__inner
+                block

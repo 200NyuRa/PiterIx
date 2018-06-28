@@ -1,0 +1,22 @@
+mixin participants(data)
+    include ./table
+
+    -data = data || [];
+
+    section.participant&attributes(attributes)
+        .participant__list
+
+            each participantItem in data
+
+                .participant__item
+                    .participant__item-head
+                        .participant__item-name= participantItem.name
+                        .participant__item-info
+                            span.participant__caption= participantItem.caption
+                            span.participant__item-quantity &nbsp;
+                            .participant__item-toggle
+                                .participant__toggle-icon
+
+                    .participant__item-body
+                        .participant__item-content
+                            +table(participantItem.table).table_participant

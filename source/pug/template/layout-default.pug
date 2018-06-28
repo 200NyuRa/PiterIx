@@ -1,0 +1,30 @@
+include ../template/head
+include ../template/header
+include ../template/footer
+include ../template/scripts
+include ../blocks/modals/modal-login
+include ../blocks/modals/modal-connect
+
+block vars
+    - modifierMain
+
+doctype html
+html(lang='ru')
+    +head()
+    block head
+
+    body.page#root
+        block header
+            +header()
+
+        main.main(class=modifierMain ? `main_${modifierMain}`: '')
+            block content
+
+        block footer
+            +footer()
+
+        +modal-login()
+        +modal-connect()
+
+        block script
+            +scripts()

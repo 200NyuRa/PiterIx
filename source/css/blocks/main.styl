@@ -1,0 +1,38 @@
+.main {
+	padding-top: 152px
+	padding-bottom: 1px
+
+	@media $tablet {
+		padding-top: 115px
+	}
+
+	@media $tablet {
+		padding-top: 70px
+	}
+
+	&_contact {
+		background: url('../images/circles.png')
+		background-size: 1160px auto
+		background-position: 50% 5px
+		background-repeat: no-repeat
+
+		@media $desktop {
+			background-position: 50% -12px
+		}
+
+		@media $smallDesktop {
+			background-size: 1000px auto
+			background-position: 50% 43px
+		}
+
+		@media $tablet {
+			background-size: 720px auto
+			background-position: 50% 25px
+		}
+
+		@media $phone {
+			background-size: 100% auto
+			background-position: 50% 65%
+		}
+	}
+}

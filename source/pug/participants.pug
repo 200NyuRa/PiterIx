@@ -1,0 +1,43 @@
+extends ./template/layout-default
+include ./blocks/section
+include ./blocks/paragraph
+include blocks/participants
+
+block vars
+    include data/participants
+
+block head
+    - pageTitle = 'Участники';
+
+block content
+
+    +section({
+        container: true,
+        headline: {
+            container: true,
+            title:  'Участники'
+        }
+    })
+
+        +paragraph({
+            mod: 'small-indent',
+            columns: [
+                {
+                    mod: 6,
+                    text: '<p>MSK-IX ускоряет коммуникации между интернет-компаниями, ' +
+                    'предоставляя нейтральную платформу Internet eXchange для обмена ' +
+                    'IP-трафиком между сетями и&nbsp;глобальную распределенную сеть ' +
+                    'DNS-серверов для поддержки корневых доменных зон.</p>'
+                },
+                {
+                    mod: 6,
+                    text: '<p>Более 500 организаций используют сервисы MSK-IX для развития' +
+                    ' сетевого присутствия в&nbsp;10&nbsp;городах. К&nbsp;MSK-IX подключены ' +
+                    'операторы связи, социальные сети, поисковые системы, видеопорталы,' +
+                    ' провайдеры облачных сервисов, корпоративные и&nbsp;научно-образовательные ' +
+                    'сети.</p>'
+                }
+            ]
+        })
+
+        +participants(participants)

@@ -1,0 +1,19 @@
+include ./table
+
+mixin price(data)
+    -data = data || {};
+    -priceList = data.priceList || [];
+
+    .price
+        if(priceList)
+            .price__list
+                each priceItem in priceList
+                    .price__item
+
+                        .price__item-head= priceItem.heading
+                            .price__item-toggle
+                                .price__item-toggle-icon
+
+                        .price__item-body
+                            .price__item-content
+                                +table(priceItem.table).table_price

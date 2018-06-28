@@ -1,0 +1,53 @@
+.advantages {
+	margin-bottom: 80px
+
+	@media $tablet {
+		margin-bottom: 64px
+	}
+
+	&__container {
+		container()
+	}
+
+	&__row {
+		margin: 0 -20px
+		display: flex
+		justify-content: space-between
+		margin-bottom: 88px
+
+		@media $tablet {
+			margin-bottom: 64px
+		}
+
+		@media $phone {
+			flex-direction: column
+			margin-bottom: 56px
+		}
+
+		&:last-child {
+			margin-bottom: 0
+		}
+	}
+
+	&__aside {
+		display: flex
+		padding: 0 20px
+		width: 33.3333%
+
+		@media $phone {
+			width: 100%
+			margin-bottom: 24px
+			order: -1
+		}
+	}
+
+	&__content {
+		display: flex
+		padding: 0 20px
+		width: 66.6667%
+
+		@media $phone {
+			width: 100%
+		}
+	}
+}

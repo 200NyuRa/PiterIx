@@ -1,0 +1,22 @@
+mixin table(data)
+    - data = data || {};
+    - dataRows = data.rows || [];
+    - dataHead = data.head || [];
+
+    table.table&attributes(attributes)
+
+        if data.caption
+            caption.table__caption!= data.caption
+
+        if data.head
+            tr.table__head
+                each th in dataHead
+                    th.table__th(class=th.mod ? `table__th_${th.mod}`: '')!= th.text
+
+        each rows, index in dataRows
+            tr.table__row
+                each col in rows
+                    if col.th
+                        th.table__th(class=col.mod ? `table__th_${col.mod}`: '')!= col.text
+                    else
+                        td.table__td(class=col.mod ? `table__td_${col.mod}`: '')!= col.text

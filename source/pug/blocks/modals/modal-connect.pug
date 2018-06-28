@@ -1,0 +1,35 @@
+mixin modal-connect(data)
+    - data = data || {};
+
+    include ./modal
+
+    +modal({
+        mod: 'connect',
+        heading: 'Подключиться'
+    })
+
+        form.form(action='data/submit.php', novalidate='novalidate')
+            .form__item
+                label.form__label(for='connectEmail') Email
+                .form__field-wrapper
+                    input#connectEmail.form__field(type='text', name='name', required='')
+            .form__item
+                label.form__label(for='connectLocation') Место подключения
+                .form__choice-panel
+                    .form__choice-point
+                        input#connectLocation1.form__radio(type='radio', name='connectLocation', value='connectLocation1', checked='')
+                        label.form__choice-label(for='connectLocation1')
+                            | Санкт-
+                            br
+                            | Петербург
+                    .form__choice-point
+                        input#connectLocation2.form__radio(type='radio', name='connectLocation', value='connectLocation2')
+                        label.form__choice-label(for='connectLocation2') Москва
+                    .form__choice-point
+                        input#connectLocation3.form__radio(type='radio', name='connectLocation', value='connectLocation3')
+                        label.form__choice-label(for='connectLocation3') Франкфурт
+            .form__item.form__item_indent-big
+                label.form__label(for='numberAS') Номер AS
+                input#numberAS.form__field(type='text', name='numberAS', required='')
+            button.form__submit.button(type='submit') Войти
+

@@ -1,0 +1,15 @@
+mixin footer(data)
+    - data = data || {};
+
+    include ../blocks/social.pug
+    include ../blocks/menu.pug
+
+    footer.footer
+        .footer__container
+            .footer__top
+               +menu('footer')
+            .footer__bottom
+                .footer__copyright
+                    | ©2018 Piter ix
+                .footer__social
+                    +social()

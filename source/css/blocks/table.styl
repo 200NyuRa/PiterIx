@@ -5,10 +5,8 @@
 	width: 100%
 
 	&_participant {
-		^[0]__th,
-		^[0]__td {
-			flex-shrink: 0
-
+		& ^[0]__th,
+		& ^[0]__td {
 			&:nth-child(1) {
 				width: (285/1200) * 100 + '%'
 				padding-right: 16px
@@ -93,6 +91,133 @@
 		}
 	}
 
+	&_price {
+		& ^[0]__th,
+		& ^[0]__td {
+
+			&:nth-child(1) {
+				width: (416/792) * 100 + '%'
+				padding-right: 40px
+
+				@media $phone {
+					width: 100%
+					padding-right 0
+				}
+			}
+			&:nth-child(2) {
+				width: (208/792) * 100 + '%'
+				padding-right 0
+
+				@media $phone {
+					width: 100%
+					padding-right 0
+					padding-left 0
+				}
+			}
+			&:nth-child(3) {
+				width: (168/792) * 100 + '%'
+
+				@media $phone {
+					width: 100%
+					padding-left 0
+				}
+			}
+		}
+		& ^[0]__td {
+
+			@media $phone {
+				padding: 16px 0 16px 0
+			}
+		}
+
+		& ^[0]__th-mobile {
+			width: 50%
+			padding-right: 20px
+		}
+	}
+
+	&_location {
+		& ^[0]__th,
+		& ^[0]__td {
+
+			&:nth-child(1) {
+				width: (416/1000) * 100 + '%'
+				position: relative
+				padding-right: 10px
+				padding-left: 40px
+
+				@media $phone {
+					width: 100%
+					padding-left: 32px
+				}
+			}
+			&:nth-child(2) {
+				width: (104/1000) * 100 + '%'
+				padding-right 10px
+				padding-left 10px
+
+				@media $phone {
+					width: 100%
+					padding-right 0
+					padding-left 0
+				}
+			}
+			&:nth-child(3) {
+				width: (104/1000) * 100 + '%'
+				padding-right 10px
+				padding-left 10px
+
+				@media $phone {
+					width: 100%
+					padding-left 0
+				}
+			}
+			&:nth-child(4) {
+				width: (104/1000) * 100 + '%'
+				padding-right 10px
+				padding-left 10px
+
+				@media $phone {
+					width: 100%
+					padding-left 0
+				}
+			}
+			&:nth-child(5) {
+				width: (168/1000) * 100 + '%'
+				padding-right 10px
+				padding-left 10px
+
+				@media $phone {
+					width: 100%
+					padding-left 0
+				}
+			}
+			&:nth-child(6) {
+				width: (104/1000) * 100 + '%'
+				padding-right 10px
+				padding-left 10px
+
+				@media $phone {
+					width: 100%
+					padding-left 0
+				}
+			}
+		}
+		& ^[0]__td {
+			align-items: center
+
+			@media $phone {
+				padding: 8px 0
+			}
+		}
+
+		& ^[0]__th-mobile {
+			width: 50%
+			padding-right: 20px
+		}
+	}
+
+
 	&__head {
 		display: flex
 		background: $neutralColor
@@ -107,7 +232,7 @@
 		display: flex
 		border-bottom: 1px solid rgba($neutralDarkColor, .4)
 
-		&_no-border {
+		&:last-child {
 			border-bottom: none
 		}
 
@@ -123,6 +248,7 @@
 	&__th {
 		display: flex
 		align-items: center
+		flex-shrink: 0
 		color: $neutralDarkColor
 		font-size: 18px
 		line-height: (16/18)
@@ -140,6 +266,8 @@
 
 	&__td {
 		display: flex
+		flex-wrap: wrap
+		flex-shrink: 0
 		font-size: 21px
 		line-height: (24/21)
 		padding: 16px 0
@@ -199,6 +327,8 @@
 				color: $neutralDarkColor
 				line-height: (16/18)
 				padding: 8px 0
+				line-height: 1.4
+				text-align: left
 				background: $neutralColor
 				border-bottom: 1px solid rgba($neutralDarkColor, .4)
 			}
@@ -215,5 +345,43 @@
 			font-weight: 300
 			color: $textColor
 		}
+	}
+
+	&__link {
+		color $brandColor
+		display inline
+		border-bottom: 1px dashed currentColor
+	}
+
+	&__point {
+		position: absolute
+		left: 0
+		top: 0
+		bottom: 0
+		margin: auto 0
+		display: block
+		width: 24px
+		height: 24px
+		font-size: 10px
+		line-height: 24px
+		color: $textLightColor
+		text-align: center
+		font-weight: 700
+		border-radius: 50%
+		background: $accentColor
+
+		@media $phone {
+			width: 20px
+			height: 20px
+			line-height: 20px
+		}
+	}
+
+	&__caption {
+	    color: $neutralDarkColor
+		font-size: 18px
+		line-height: 1
+		display: block
+		width: 100%
 	}
 }

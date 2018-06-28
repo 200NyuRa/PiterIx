@@ -1,0 +1,16 @@
+mixin menu(data)
+    -data = data || '';
+
+    .menu&attributes(attributes)
+        ul.menu__nav
+            li.menu__item
+                a.menu__link(class= data=='footer' ? 'menu__link_underline': '')(href='#') О сети
+            li.menu__item
+                a.menu__link.menu__link_active(class= data=='footer' ? 'menu__link_underline': '')(href='#') Участники
+            li.menu__item
+                a.menu__link(class= data=='footer' ? 'menu__link_underline': '')(href='#') Техника
+            li.menu__item
+                a.menu__link(class= data=='footer' ? 'menu__link_underline': '')(href='#') Цены
+            li.menu__item
+                a.menu__link(class= data=='footer' ? 'menu__link_underline': '')(href='#') Контакты
+        a.menu__connect-link(href='#', data-open-modal='true', data-type='connect') Подключиться

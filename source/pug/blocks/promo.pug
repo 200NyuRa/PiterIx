@@ -1,0 +1,12 @@
+mixin promo(data)
+    - data = data || {};
+
+    .promo
+        .promo__container
+            .promo__contant(style={'background-image': 'url(./images/promo-bg.png)'})
+                .h1.promo__headline
+                    span.promo__title
+                        = data.title
+                    span.promo__subtitle
+                        = data.subtitle
+

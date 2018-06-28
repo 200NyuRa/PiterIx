@@ -9,6 +9,10 @@ $(function(){
 		'form',
 		'modal',
 		'header',
-		'table'
+		'table',
+		'price',
+		'slider-logo',
+		'tooltip',
+		'tabs'
 	]);
 });

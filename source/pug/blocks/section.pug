@@ -1,0 +1,11 @@
+include ./headline
+
+mixin section(data)
+    -data = data || {};
+
+    section.section&attributes(attributes)
+        if data.headline
+            +headline(data.headline).section__headline
+
+        .section__container
+            block

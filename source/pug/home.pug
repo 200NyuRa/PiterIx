@@ -1,0 +1,51 @@
+extends ./template/layout-default
+include ./blocks/promo
+include ./blocks/about
+include ./blocks/advantages
+include ./blocks/slider-logo
+
+block head
+    - pageTitle = 'ddd';
+
+
+block content
+    +promo({
+        titleTag: 'h5',
+        title: 'Прямой доступ',
+        subtitle: 'к самым востребованным ресурсам интернета'
+    })
+
+    +about().about__content_underline
+
+    +advantages()
+
+    +slider-logo({
+        title: 'Участники сети',
+        arrow: true,
+        slides: [
+            {
+                href: '#',
+                img: './images/slider-logo/logo-1.png'
+            },
+            {
+                href: '#',
+                img: './images/slider-logo/logo-2.png'
+            },
+            {
+                href: '#',
+                img: './images/slider-logo/logo-3.png'
+            },
+            {
+                href: '#',
+                img: './images/slider-logo/logo-4.png'
+            },
+            {
+                href: '#',
+                img: './images/slider-logo/logo-5.png'
+            }
+        ]
+    })
+
+
+
+

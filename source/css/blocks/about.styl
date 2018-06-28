@@ -1,0 +1,123 @@
+.about {
+	margin-bottom: 80px
+
+	&:last-child {
+		margin-bottom: 0
+	}
+
+	@media $tablet {
+		margin-bottom: 64px
+	}
+
+	&__container {
+		container()
+	}
+
+	&__headline {
+		margin-bottom: 64px
+
+		@media $tablet {
+			margin-bottom: 56px
+		}
+
+		&:last-child {
+			margin-bottom: 0
+		}
+	}
+
+	&__content-block {
+		display: flex
+		justify-content: space-between
+		margin-bottom: 88px
+
+		@media $tablet {
+			margin-bottom: 64px
+		}
+
+		@media $phone {
+			flex-direction: column
+			margin-bottom: 56px
+		}
+
+		&:last-child {
+			margin-bottom: 0
+		}
+
+		&_underline {
+			border-bottom: 4px solid $brandColor
+			padding-bottom: 68px
+		}
+
+		@media $tablet {
+			padding-bottom: 52px
+		}
+	}
+
+	&__column {
+		&_6 {
+			width: calc(50% - 20px)
+
+			@media $phone {
+				width: 100%
+				margin-bottom: 32px
+
+				&:last-child {
+					margin-bottom: 0
+				}
+			}
+		}
+	}
+
+	&__title {
+		position: relative
+		font-size: 80px
+		line-height: 1
+		font-weight: 700
+		color: $extraColor
+		padding-bottom: 26px
+		margin-bottom: 22px
+		letter-spacing: 1px
+		text-transform: uppercase
+
+		&:last-child {
+			margin-bottom: 0
+		}
+
+		&:after {
+			content: ''
+			display: block
+			height: 4px
+			width: 104px
+			position: absolute
+			bottom: 0
+			left: 0
+			background: currentColor
+		}
+
+		@media $tablet {
+			font-size: 52px
+		}
+	}
+
+	&__strong {
+		max-width: 528px
+		color: $brandColor
+		font-size: 60px
+		line-height: (64/60)
+		letter-spacing: .94px
+		text-transform: uppercase
+
+		@media $desktop {
+			font-size: 52px
+		}
+
+		@media $tablet {
+			font-size: 36px
+		}
+
+		@media $phone {
+			font-size: 30px
+		}
+	}
+
+}

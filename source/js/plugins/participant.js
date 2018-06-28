@@ -2,12 +2,12 @@ import Accordion from "../classes/Accordion";
 
 export default function(){
     const $block = $(this);
-    const $blockList = $(this).find('.participant__list');
-    const $blockItem = $(this).find('.participant__item');
+    const $blockList = $block.find('.participant__list');
+    const $blockItem = $block.find('.participant__item');
 
-    $blockItem.each(function() {
-        const $item = $(this);
-        const $table = $item.find('.participant__table');
+    $blockItem.each(function(index, element) {
+        const $item = $(element);
+        const $table = $item.find('.table');
         const $quantityCounter = $table.find('.table__row').length;
         const $quantity = $item.find('.participant__item-quantity');
 

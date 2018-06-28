@@ -1,0 +1,165 @@
+include ./tabs/tabs
+include ./tabs/tab
+include ./table
+include ./map
+include ./title
+
+mixin presence(data)
+    -data = data || {};
+    -title = data.title || '';
+
+    .presence&attributes(attributes)
+        .presence__container
+            +title({
+                title: 'Точки присутствия'
+            }).presence__title
+
+        +tabs({
+            menu: ['Санкт-Петербург', 'Москва', 'Франкфурт']
+        })
+            +tab(0)
+                +map({
+                    img: './images/map-sankt-peterburg.jpg'
+                }).tab__img
+
+                +table({
+                    head: [
+                        {
+                            text: 'Название'
+                        },
+                        {
+                            text: 'Порты'
+                        },
+                        {
+                            mod: 'center',
+                            text: 'Wave'
+                        },
+                        {
+                            mod: 'center',
+                            text: 'Vlan'
+                        },
+                        {
+                            mod: 'center',
+                            text: 'Vlan QinQ'
+                        },
+                        {
+                            mod: 'center',
+                            text: 'RemoteIX'
+                        }
+                    ],
+                    rows: [
+                        [
+                            {
+                                mod: 'head-mobile',
+                                text:'<span class="table__point">1</span>ЦОИ «Большая Морская 18»'
+                            },
+                            {
+                                text: '40GE'
+                            },
+                            {
+                                mod: 'existence',
+                                text: '+'
+                            },
+                            {
+                                mod: 'existence',
+                                text: '+'
+                            },
+                            {
+                                mod: 'existence',
+                                text: '+'
+                            },
+                            {
+                                mod: 'existence',
+                                text: '-'
+                            }
+                        ],
+                        [
+                            {
+                                mod: 'head-mobile',
+                                text: '<span class="table__point">2</span>ИВЦ РЖД «Боровая 57»'
+                            },
+                            {
+                                text: '100GE'
+                            },
+                            {
+                                mod: 'existence',
+                                text: '+'
+                            },
+                            {
+                                mod: 'existence',
+                                text: '-'
+                            },
+                            {
+                                mod: 'existence',
+                                text: '+'
+                            },
+                            {
+                                mod: 'existence',
+                                text: '-'
+                            }
+                        ],
+                        [
+                            {
+                                mod: 'head-mobile',
+                                text: '<span class="table__point">3</span>Бонч-IT' +
+                                    '<span class="table__caption">наб. реки Мойки, 61</span>'
+                            },
+                            {
+                                text: '1GE'
+                            },
+                            {
+                                mod: 'existence',
+                                text: '-'
+                            },
+                            {
+                                mod: 'existence',
+                                text: '+'
+                            },
+                            {
+                                mod: 'existence',
+                                text: '-'
+                            },
+                            {
+                                mod: 'existence',
+                                text: '+'
+                            }
+                        ],
+                        [
+                            {
+                                mod: 'head-mobile',
+                                text: '<span class="table__point">4</span>Радуга-2' +
+                                '<span class="table__caption">ул. Кантемировская, д.&nbsp;12</span>'
+                            },
+                            {
+                                text: '10GE'
+                            },
+                            {
+                                mod: 'existence',
+                                text: '+'
+                            },
+                            {
+                                mod: 'existence',
+                                text: '+'
+                            },
+                            {
+                                mod: 'existence',
+                                text: '-'
+                            },
+                            {
+                                mod: 'existence',
+                                text: '-'
+                            }
+                        ]
+                    ]
+                }).table_location
+
+
+            +tab(1)
+                +map({
+                    img: './images/map-sankt-peterburg.jpg'
+                }).tab__img
+
+            +tab(2)
+                +map({
+                    img: './images/map-sankt-peterburg.jpg'
+                }).tab__img

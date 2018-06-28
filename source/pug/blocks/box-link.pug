@@ -1,0 +1,10 @@
+mixin box-link(data)
+    -data = data || {};
+
+    a.box-link(href=data.href || '#')&attributes(attributes)
+
+        if data.icon
+            div(class= "box-link__icon box-link__icon_" + data.icon)
+
+        if data.title
+            .box-link__title!= data.title

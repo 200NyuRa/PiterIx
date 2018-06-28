@@ -1,0 +1,66 @@
+.box-link {
+	position: relative
+	display: flex
+	flex-direction: column
+	justify-content: space-between
+	padding: 24px
+	min-height: 260px
+	width: 100%
+	background: $extraColor
+	z-index: 1
+	transition: background $duration
+
+	&:hover {
+		background darken($extraColor, 30%)
+		faster()
+	}
+
+	&:hover &__icon {
+		color lighten($brandColor, 3%)
+		faster()
+	}
+
+	@media $tablet {
+		max-height: 320px
+	}
+
+	&__icon {
+		position: absolute
+		right: 24px
+		top: 24px
+		pointer-events none
+		z-index: -1
+		color: $brandColor
+		icon-loupe()
+		transition: color $duration
+
+
+		&_loupe {
+			font-size: 192px
+			line-height: 1
+
+			@media $smallDesktop {
+				font-size: 160px
+			}
+
+			@media $tablet {
+				max-height: 148px
+			}
+		}
+	}
+
+	&__title {
+		margin-top: auto
+	    color: $bgColor
+		font-weight: 700
+		font-size: 48px
+		line-height: 1
+		letter-spacing: -1.71px
+		text-transform: uppercase
+
+		@media $tablet {
+			font-size: 36px
+		}
+
+	}
+}

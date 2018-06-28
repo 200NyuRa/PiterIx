@@ -1,0 +1,12 @@
+mixin contact(data)
+    -data = data || {};
+    -contactList = data.contactList || [];
+
+    .contact&attributes(attributes)
+        .contact__img-wrapper
+            img.contact__img(src=data.img)
+
+        ul.contact__list
+            each contact in contactList
+                li.contact__item(class=contact.mod ? `contact__item_${contact.mod}`: '')
+                    a.contact__link(href= contact.href)= contact.text

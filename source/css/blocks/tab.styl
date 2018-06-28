@@ -1,0 +1,28 @@
+.tab {
+	padding-top: 40px
+	opacity 0
+	z-index: -1
+	top: -150vh
+	visibility: hidden
+	position absolute
+	transform translateX(50px)
+	transition opacity $duration, transform $duration
+
+	&_active {
+		position relative
+		z-index: 1
+		opacity 1
+		left 0
+		top: 0
+		transform: translateX(0)
+		visibility: visible
+	}
+
+	&__content {
+		max-width: 1040px
+		padding: 0 20px
+		margin: 0 auto
+	}
+
+
+}

@@ -1,0 +1,5 @@
+mixin map(data)
+    - data = data || {};
+
+    .map&attributes(attributes)
+        img.map__img(src=data.img)

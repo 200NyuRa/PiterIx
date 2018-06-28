@@ -1,0 +1,6 @@
+mixin title(data)
+    -data = data || {};
+
+    #{data.titleTag ? data.titleTag : 'h2'}.title(class = data.titleMod)&attributes(attributes)= data.title
+
+        block

@@ -8,6 +8,7 @@ var requirePackage = function(name) {
 };
 var gulp = requirePackage('gulp');
 var path = require('path');
+var pug = requirePackage('gulp-pug');
 var stylus = requirePackage('gulp-stylus');
 var csso = requirePackage('gulp-csso');
 var gutil = requirePackage('gulp-util');
@@ -26,21 +27,32 @@ var postcssPseudoContent = requirePackage('postcss-pseudo-elements-content');
 var webpackStream = requirePackage('webpack-stream');
 var webpack = webpackStream.webpack;
 var livereload = requirePackage('gulp-livereload');
+var data = require('gulp-data');
 
 /* --- Vars --- */
 var browsers = ['last 4 version', 'ff > 35', 'chrome > 35', 'ie > 9'];
 var isProd = false;
 var webpackConfig;
 
+
+
 /* --- Default --- */
 gulp.task('default', function() {
-	return gulp.start('html', 'css', 'js', 'watch', 'livereload');
+	return gulp.start('pug', 'css', 'js', 'watch', 'livereload');
 });
 
 /* --- Prod --- */
 gulp.task('prod', function() {
 	isProd = true;
 	return gulp.start('html', 'css', 'js');
+});
+
+/* --- pug:build --- */
+gulp.task('pug', function () {
+    gulp.src('./source/pug/*.pug')
+        .pipe(pug({ pretty: '\t'}))
+        .pipe(gulp.dest('./public/'))
+        .pipe(livereload());
 });
 
 /* --- Task / Iconfont --- */
@@ -142,22 +154,22 @@ gulp.task('js', ['js-libs'], function() {
 		.pipe(livereload());
 });
 
-/* --- Task / HTML --- */
-gulp.task('html', function() {
-	return gulp
-		.src(
-			[
-				'./public/**/*.html',
-				'./public/**/*.php',
-				'./public/**/*.inc',
-				'./includes/**/*.html',
-				'./includes/**/*.php',
-				'./includes/**/*.inc'
-			],
-			{ read: false }
-		)
-		.pipe(livereload());
-});
+// /* --- Task / HTML --- */
+// gulp.task('html', function() {
+// 	return gulp
+// 		.src(
+// 			[
+// 				'./public/**/*.html',
+// 				'./public/**/*.php',
+// 				'./public/**/*.inc',
+// 				'./includes/**/*.html',
+// 				'./includes/**/*.php',
+// 				'./includes/**/*.inc'
+// 			],
+// 			{ read: false }
+// 		)
+// 		.pipe(livereload());
+// });
 
 /* --- Task / Watch --- */
 gulp.task('watch', function() {
@@ -167,19 +179,22 @@ gulp.task('watch', function() {
 	watch('./source/**/*.js', function() {
 		return gulp.start('js');
 	});
-	watch(
-		[
-			'./public/**/*.html',
-			'./public/**/*.php',
-			'./public/**/*.inc',
-			'./includes/**/*.html',
-			'./includes/**/*.php',
-			'./includes/**/*.inc'
-		],
-		function() {
-			return gulp.start('html');
-		}
-	);
+    watch('./source/pug/**/*.pug', function() {
+        return gulp.start('pug');
+    })
+	// watch(
+	// 	[
+	// 		'./public/**/*.html',
+	// 		'./public/**/*.php',
+	// 		'./public/**/*.inc',
+	// 		'./includes/**/*.html',
+	// 		'./includes/**/*.php',
+	// 		'./includes/**/*.inc'
+	// 	],
+	// 	function() {
+	// 		return gulp.start('html');
+	// 	}
+	// );
 	watch('./source/icons/*.svg', function() {
 		return gulp.start('iconfont');
 	});

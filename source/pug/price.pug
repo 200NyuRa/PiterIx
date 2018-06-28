@@ -1,0 +1,37 @@
+extends ./template/layout-default
+include blocks/hint
+include ./blocks/section
+include ./blocks/price
+include ./blocks/paragraph
+include blocks/hint
+
+block vars
+    include data/price
+
+block head
+    - pageTitle = 'Цены';
+
+block prepend header
+    +hint()
+
+block content
+    +section({
+        container: true,
+        headline: {
+            container: true,
+            title:  'Цены'
+        }
+    })
+        +paragraph({
+            mod: 'small-indent',
+            columns: [
+                {
+                    mod: 12,
+                    text: '<p>Цены указаны без учета НДС и VAT</p>'
+                }
+            ]
+        })
+
+        +price(price)
+
+

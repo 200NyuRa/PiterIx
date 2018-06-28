@@ -1,0 +1,12 @@
+mixin tabs(data)
+    -data = data || {};
+    -menu = data.menu || [];
+
+    .tabs
+        .tabs__menu
+            .tabs__menu-wrapper.swiper-wrapper
+                each item, index in menu
+                    span.tabs__menu-item.swiper-slide(class=(index===0) ? 'tabs__menu-item_active': '')= item
+
+        .tabs__tab-wrapper
+            block

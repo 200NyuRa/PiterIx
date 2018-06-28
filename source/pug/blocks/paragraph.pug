@@ -1,0 +1,8 @@
+mixin paragraph(data)
+    - data = data || {};
+    - columns = data.columns || [];
+
+    .paragraph(class=`paragraph_${data.mod}`)
+        each column in columns
+            .paragraph__column(class=`paragraph__column_${column.mod}`).text
+                != column.text

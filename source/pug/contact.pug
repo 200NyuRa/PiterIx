@@ -1,0 +1,35 @@
+extends ./template/layout-default
+include ./blocks/section
+include ./blocks/contact
+
+block vars
+    - modifierMain = 'contact'
+
+block head
+    - pageTitle = 'Контакты';
+
+block content
+    +section({
+        container: true,
+        headline: {
+            container: true,
+            title:  'Контакты'
+        }
+    })
+
+        +contact({
+            img: './images/for-contacts.png',
+            contactList: [
+                {
+                    mod: 'tel',
+                    text: '+7 (812) 612-11-04',
+                    href: 'tel:+7(812)6121104'
+                },
+                {
+                    mod: 'mail',
+                    text: 'info@piter-ix.ru',
+                    href: 'mailto:info@piter-ix.ru'
+                }
+            ]
+        }).section__contact
+
