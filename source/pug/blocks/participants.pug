@@ -10,7 +10,7 @@ mixin participants(data)
 
                 .participant__item
                     .participant__item-head
-                        .participant__item-name= participantItem.name
+                        .participant__item-name!= participantItem.name
                         .participant__item-info
                             span.participant__caption= participantItem.caption
                             span.participant__item-quantity &nbsp;

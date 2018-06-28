@@ -67,10 +67,10 @@
 				<div class="about__container">
 					<h2 class="about__title">Piter ix</h2>
 					<div class="about__content-block about__content-block_underline">
-						<div class="about__section__column section__column_6">
+						<div class="about__column about__column_6">
 							<div class="about__strong">Некоммерческая принговая сеть</div>
 						</div>
-						<div class="about__section__column section__column_6 text">
+						<div class="about__column about__column_6 text">
 							<p>Обмен трафиком внутри вашего города отныне не потребует существенных затрат.</p>
 							<p>PITER-IX позволяет эффективно использовать кроссировки и порты активного оборудования.</p>
 						</div>
@@ -133,22 +133,24 @@
 			</section>
 			<div class="slider-logo">
 				<div class="slider-logo__container">
-					<div class="slider-logo__slider">
-						<div class="slider-logo__slider-bg">
-							<h2 class="title slider-logo__title">Участники сети
-							</h2>
-							<div class="slider-logo__slider-container swiper-container">
-								<div class="slider-logo__slider-wrapper swiper-wrapper">
-									<div class="slider-logo__slide swiper-slide"><a class="slider-logo__link" href="#"><img class="slider-logo__img" src="./images/slider-logo/logo-1.png"/></a></div>
-									<div class="slider-logo__slide swiper-slide"><a class="slider-logo__link" href="#"><img class="slider-logo__img" src="./images/slider-logo/logo-2.png"/></a></div>
-									<div class="slider-logo__slide swiper-slide"><a class="slider-logo__link" href="#"><img class="slider-logo__img" src="./images/slider-logo/logo-3.png"/></a></div>
-									<div class="slider-logo__slide swiper-slide"><a class="slider-logo__link" href="#"><img class="slider-logo__img" src="./images/slider-logo/logo-4.png"/></a></div>
-									<div class="slider-logo__slide swiper-slide"><a class="slider-logo__link" href="#"><img class="slider-logo__img" src="./images/slider-logo/logo-5.png"/></a></div>
+					<div class="slider-logo__bg">
+						<h2 class="title slider-logo__title">Участники сети
+						</h2>
+						<div class="slider-logo__slider">
+							<div class="slider-logo__slider-inner">
+								<div class="slider-logo__slider-container swiper-container">
+									<div class="slider-logo__slider-wrapper swiper-wrapper">
+										<div class="slider-logo__slide swiper-slide"><a class="slider-logo__link" href="#"><img class="slider-logo__img" src="./images/slider-logo/logo-1.png"/></a></div>
+										<div class="slider-logo__slide swiper-slide"><a class="slider-logo__link" href="#"><img class="slider-logo__img" src="./images/slider-logo/logo-2.png"/></a></div>
+										<div class="slider-logo__slide swiper-slide"><a class="slider-logo__link" href="#"><img class="slider-logo__img" src="./images/slider-logo/logo-3.png"/></a></div>
+										<div class="slider-logo__slide swiper-slide"><a class="slider-logo__link" href="#"><img class="slider-logo__img" src="./images/slider-logo/logo-4.png"/></a></div>
+										<div class="slider-logo__slide swiper-slide"><a class="slider-logo__link" href="#"><img class="slider-logo__img" src="./images/slider-logo/logo-5.png"/></a></div>
+									</div>
 								</div>
 							</div>
+							<div class="slider-logo__arrow slider-logo__arrow_left"></div>
+							<div class="slider-logo__arrow slider-logo__arrow_right"></div>
 						</div>
-						<div class="slider-logo__arrow slider-logo__arrow_left"></div>
-						<div class="slider-logo__arrow slider-logo__arrow_right"></div>
 					</div>
 				</div>
 			</div>
@@ -156,13 +158,13 @@
 		<footer class="footer">
 			<div class="footer__container">
 				<div class="footer__top">
-					<div class="menu">
+					<div class="menu menu_footer">
 						<ul class="menu__nav">
-							<li class="menu__item"><a class="menu__link menu__link_underline" href="#">О сети</a></li>
-							<li class="menu__item"><a class="menu__link menu__link_active menu__link_underline" href="#">Участники</a></li>
-							<li class="menu__item"><a class="menu__link menu__link_underline" href="#">Техника</a></li>
-							<li class="menu__item"><a class="menu__link menu__link_underline" href="#">Цены</a></li>
-							<li class="menu__item"><a class="menu__link menu__link_underline" href="#">Контакты</a></li>
+							<li class="menu__item"><a class="menu__link" href="#">О сети</a></li>
+							<li class="menu__item"><a class="menu__link menu__link_active" href="#">Участники</a></li>
+							<li class="menu__item"><a class="menu__link" href="#">Техника</a></li>
+							<li class="menu__item"><a class="menu__link" href="#">Цены</a></li>
+							<li class="menu__item"><a class="menu__link" href="#">Контакты</a></li>
 						</ul><a class="menu__connect-link" href="#" data-open-modal="true" data-type="connect">Подключиться</a>
 					</div>
 				</div>
@@ -222,7 +224,7 @@
 							</div>
 						</div>
 						<div class="form__item">
-							<label class="form__label" for="connectLocation">Место подключения</label>
+							<label class="form__label">Место подключения</label>
 							<div class="form__choice-panel">
 								<div class="form__choice-point">
 									<input class="form__radio" id="connectLocation1" type="radio" name="connectLocation" value="connectLocation1" checked=""/>

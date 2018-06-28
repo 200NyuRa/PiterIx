@@ -19,12 +19,20 @@ export default function() {
                 slidesPerView: 1,
                 spaceBetween: 10
             },
-            767: {
+            580: {
                 slidesPerView: 2,
                 spaceBetween: 30
             },
+            767: {
+                slidesPerView: 3,
+                spaceBetween: 30
+            },
+            1023: {
+                slidesPerView: 4,
+                spaceBetween: 30
+            },
             1199: {
-                spaceBetween: 20
+                spaceBetween: 30
             },
         }
     });

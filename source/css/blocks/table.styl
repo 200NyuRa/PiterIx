@@ -4,6 +4,10 @@
 	border-collapse: collapse
 	width: 100%
 
+	tbody {
+		display: block
+	}
+
 	&_participant {
 		& ^[0]__th,
 		& ^[0]__td {
@@ -158,8 +162,8 @@
 
 				@media $phone {
 					width: 100%
-					padding-right 0
 					padding-left 0
+					padding-right 10px
 				}
 			}
 			&:nth-child(3) {
@@ -279,7 +283,6 @@
 
 		@media $phone {
 			width: 100%
-			text-align: center
 			align-items: center
 			padding: 8px 0
 			padding-left: 16px

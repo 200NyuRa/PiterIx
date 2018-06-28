@@ -10,7 +10,7 @@ mixin price(data)
                 each priceItem in priceList
                     .price__item
 
-                        .price__item-head= priceItem.heading
+                        .price__item-head!= priceItem.heading
                             .price__item-toggle
                                 .price__item-toggle-icon
 

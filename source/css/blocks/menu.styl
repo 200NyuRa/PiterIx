@@ -35,10 +35,26 @@
 				font-size: 18px
 			}
 		}
+		.menu__connect-link {
+
+			@media $phone {
+				margin-top: 16px
+				margin-bottom: 8px
+			}
+		}
 
 		.menu__link_active {
 			@media $phone {
 				color: $extraColor
+			}
+		}
+	}
+
+	&_footer {
+		.menu__connect-link {
+
+			@media $phone {
+				margin-top: auto
 			}
 		}
 	}
@@ -141,11 +157,6 @@
 	&__connect-link {
 		color: $accentColor
 		transition: color $duration
-
-		@media $phone {
-			margin-top: 16px
-			margin-bottom: 8px
-		}
 
 		&:after {
 			display: none

@@ -7,22 +7,24 @@ mixin slider-logo(data)
 
     .slider-logo&attributes(attributes)
         .slider-logo__container
-            .slider-logo__slider
-                .slider-logo__slider-bg
-                    if(data.title)
-                        +title({title: data.title}).slider-logo__title
+            .slider-logo__bg
+                if(data.title)
+                    +title({title: data.title}).slider-logo__title
 
-                    .slider-logo__slider-container.swiper-container
-                        .slider-logo__slider-wrapper.swiper-wrapper
+                .slider-logo__slider
+                    .slider-logo__slider-inner
 
-                            each slide in slides
-                                .slider-logo__slide.swiper-slide
-                                    a.slider-logo__link(href= slide.href)
-                                        img.slider-logo__img(src=slide.img)
+                        .slider-logo__slider-container.swiper-container
+                            .slider-logo__slider-wrapper.swiper-wrapper
 
-                if(data.arrow)
-                    .slider-logo__arrow.slider-logo__arrow_left
-                    .slider-logo__arrow.slider-logo__arrow_right
+                                each slide in slides
+                                    .slider-logo__slide.swiper-slide
+                                        a.slider-logo__link(href= slide.href)
+                                            img.slider-logo__img(src=slide.img)
 
-                if(data.pagination)
-                    .slider-logo__pagination
+                    if(data.arrow)
+                        .slider-logo__arrow.slider-logo__arrow_left
+                        .slider-logo__arrow.slider-logo__arrow_right
+
+                    if(data.pagination)
+                        .slider-logo__pagination

@@ -28,53 +28,56 @@
 		margin-bottom: 24px
 	}
 
+	//&__slider {
+	//	margin: 0 -48px
+	//	position: relative
+	//
+	//	@media $notebook {
+	//		margin: 0 -36px
+	//	}
+	//
+	//	@media $smallDesktop {
+	//		margin: 0 -22px
+	//	}
+	//
+	//	@media $tablet {
+	//		margin: 0 -30px
+	//	}
+	//
+	//	@media $phone {
+	//		margin: 0 -20px
+	//	}
+	//}
+
+	&__bg {
+		background: $bgColor
+		padding: 24px 24px 40px 24px
+	}
+	   
 	&__slider {
-		margin: 0 -48px
-		position: relative
+		position: relative;
+		margin: 0 calc(-24px - 48px)
+		padding: 0 48px
 
 		@media $notebook {
-			margin: 0 -36px
+			margin: 0 calc(-24px - 36px)
+			padding: 0 36px
 		}
 
 		@media $smallDesktop {
-			margin: 0 -22px
-		}
-
-		@media $tablet {
-			margin: 0 -30px
+			margin: 0 calc(-24px - 24px)
+			padding: 0 24px
 		}
 
 		@media $phone {
-			margin: 0 -20px
+			margin: 0 calc(-24px - 20px)
+			padding: 0 20px
 		}
 	}
 
-	&__slider-bg {
+	&__slider-inner {
 		overflow: hidden
-		background: $bgColor
-		padding: 24px 104px 40px 104px
-		margin: 0 48px
 		position: relative
-
-		@media $notebook {
-			margin: 0 36px
-		}
-
-		@media $smallDesktop {
-			padding-left: 72px
-			padding-right: 72px
-			margin: 0 22px
-		}
-
-		@media $tablet {
-			padding-bottom: 24px
-			margin: 0 30px
-		}
-
-		@media $phone {
-			margin: 0 20px
-		}
-
 
 		&:after,
 		&:before {
@@ -86,8 +89,12 @@
 			width: 109px
 			z-index: 5
 
-			@media $smallDesktop {
-				width: 79px
+			@media $phone {
+				width: 78px
+			}
+
+			@media $phoneSmall {
+				width: 69px
 			}
 		}
 
@@ -109,9 +116,19 @@
 			}
 		}
 	}
-
+	
+	 
 	&__slider-container {
 		overflow: visible
+		padding: 0 104px
+
+		@media $phone {
+			padding: 0 72px
+		}
+
+		@media $phoneSmall {
+			padding: 0 60px
+		}
 	}
 
 	&__slide {
@@ -144,8 +161,6 @@
 		width: 96px
 		height: 96px
 		top: 0
-		bottom: 0
-		margin: auto
 		background: $extraColor
 		border-radius: 2px
 		font-size: 40px
@@ -170,7 +185,8 @@
 		}
 
 		@media $tablet {
-			top: 24px
+			top: auto
+			bottom: 25%
 		}
 
 		&:after {
